@@ -134,7 +134,7 @@ class LLM_NN(BaseEstimator):
             sample_text=row["text"], similar_labels_freq=row["similar_labels_freq"]
         )
         response: ChatResponse = chat(
-            model="gemma3:12b",
+            model=self.llm_name,
             messages=[
                 {"role": "user", "content": prompt_instantiated, "temperature": 0.0}
             ],
